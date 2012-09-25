@@ -1,3 +1,3 @@
 NetworkExecutiveExample::Application.routes.draw do
-  mount NetworkExecutive::Engine => '/', as: 'network_executive'
+  mount NetworkExecutive::Engine => '/network_executive', as: 'network_executive'
 end
