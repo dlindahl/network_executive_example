@@ -3,7 +3,7 @@ ruby   '1.9.3'
 
 gem 'rails',             '~> 3.2'
 gem 'thin',              '~> 1.4.1'
-gem 'network_executive', github:'dlindahl/network_executive'
+gem 'network_executive', github:'dlindahl/network_executive', branch:'feature/require_debug'
 
 group :assets do
   gem 'sass-rails',      '~> 3.2.5'

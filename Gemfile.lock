@@ -1,9 +1,11 @@
 GIT
   remote: git://github.com/dlindahl/network_executive.git
-  revision: 98241e3ea97202f780098725268d94ffe58f14ee
+  revision: 8a044c35809704219188ad7abb1e37b6a9fcfd3d
+  branch: feature/require_debug
   specs:
     network_executive (0.0.4)
       activesupport (~> 3.2.0)
+      coffee-rails
       faye-websocket (~> 0.4.6)
       sass-rails
       uglifier
