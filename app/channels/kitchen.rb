@@ -1,4 +1,11 @@
 class Kitchen < NetworkExecutive::Channel
-  every :day, play:'espn',             for_the_first:'30min', of:'each hour'
-  every :day, play:'animation_on_fox', for_the_last:'30min',  of:'each hour'
+  schedule 'espn', duration: 15.minutes do
+    minutely( 15 ).minute_of_hour( 0 )
+    minutely( 15 ).minute_of_hour( 30 )
+  end
+
+  schedule 'animation_on_fox', duration: 15.minutes do
+    minutely( 15 ).minute_of_hour( 15 )
+    minutely( 15 ).minute_of_hour( 45 )
+  end
 end

@@ -1,3 +1,5 @@
 class Engineering < NetworkExecutive::Channel
-  every :day, play:'github_status'
+  schedule 'github_status' do
+    daily
+  end
 end
