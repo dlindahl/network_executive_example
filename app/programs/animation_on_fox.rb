@@ -1,7 +1,7 @@
 class AnimationOnFox < NetworkExecutive::Program
   include NetworkExecutive::Components::YouTubePlayer
 
-  def onready
+  def onload
     { user:'animationonfox' }
   end
 end

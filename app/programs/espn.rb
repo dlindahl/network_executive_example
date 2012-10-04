@@ -1,7 +1,7 @@
 class ESPN < NetworkExecutive::Program
   include NetworkExecutive::Components::YouTubePlayer
 
-  def onready
+  def onload
     { user:'espn' }
   end
 end
