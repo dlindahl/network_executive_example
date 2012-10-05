@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/dlindahl/network_executive.git
-  revision: ebae9a270436d29e4443d14998cb564901074ecf
+  revision: d47668d9477a905610f7a683ce456d3287862b47
   specs:
     network_executive (0.0.4)
       activesupport (~> 3.2.0)
