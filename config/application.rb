@@ -59,5 +59,9 @@ module NetworkExecutiveExample
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Ensure the logger goes to STDOUT on Heroku and does not buffer in development
+    config.logger       = Logger.new(STDOUT)
+    config.logger.level = Logger.const_get( ENV['LOG_LEVEL'] || 'INFO' )
   end
 end
