@@ -11,7 +11,7 @@ class FiveHundredPixels < NetworkExecutive::Program
     "https://api.500px.com/v1/photos?feature=popular&image_size=5&consumer_key=#{self.class.credentials[:key]}"
   end
 
-  def photos
+  def items
     feed['photos'].each_with_object([]) do |item, feed|
       image_url = item['image_url']
       location  = [ item['user']['city'], item['user']['country'] ].reject{|s| s.empty? }.join(', ')
@@ -24,8 +24,11 @@ class FiveHundredPixels < NetworkExecutive::Program
         location:     location
       }
     end
-  rescue StandardError
-    []
+  rescue
+    Rails.logger.error "#{$!.class}: #{$!.message} (#{$!.backtrace.first})"
+    # ...
+  ensure
+    {}
   end
 
 end

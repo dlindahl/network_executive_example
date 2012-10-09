@@ -14,7 +14,7 @@ class BigPicture < NetworkExecutive::Program
   Photographer = %r{\((?<photog>[A-Z][^\/]+)}
   Location     = %r{in (?<city>[A-Z]{1}[^,]*), (?<country>[A-Z]+[a-z]+ *(?:and)*(?:[A-Z][a-z]+)* *(?:[A-Z][a-z]+)*)}
 
-  def photos
+  def items
     feed['value']['items'].each_with_object([]) do |item, feed|
       image_url = item['media:group']['media:content']['url']
       desc      = item['description'].match( RawDesc )
@@ -34,6 +34,11 @@ class BigPicture < NetworkExecutive::Program
         }
       end
     end
+  rescue
+    Rails.logger.error "#{$!.class}: #{$!.message} (#{$!.backtrace.first})"
+    # ...
+  ensure
+    {}
   end
 
 end
